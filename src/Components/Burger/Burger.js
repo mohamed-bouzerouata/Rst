@@ -1,28 +1,29 @@
-import React from 'react'
-import BurgerIngredients from './BurgerIngredients/BurgerIngredients';
+import React from 'react';
+
 import classes from './Burger.css';
+import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
-const Burger = (props) => {
-    let dynamiqIngredients = Object.keys(props.ingredients)
-    .map((item) => {
-        return [...Array(props.ingredients[item])].map((_, i) => {
-
-            return <BurgerIngredients key={item + i} type={item} />
-        });
-    })
-    .reduce( (arr, el ) => {
-        return arr.concat(el)
-    }, []);
-    if (dynamiqIngredients.length === 0) {
-        dynamiqIngredients = <p>please adding some ingredinets</p>
+const burger = ( props ) => {
+    console.log(props);
+    let transformedIngredients = Object.keys( props.ingredients )
+        .map( igKey => {
+            return [...Array( props.ingredients[igKey] )].map( ( _, i ) => {
+                return <BurgerIngredient key={igKey + i} type={igKey} />;
+            } );
+        } )
+        .reduce((arr, el) => {
+            return arr.concat(el)
+        }, []);
+    if (transformedIngredients.length === 0) {
+        transformedIngredients = <p>Please start adding ingredients!</p>;
     }
-        return (
-        <div className={classes.burger}>
-            <BurgerIngredients type='bread-top' />
-            {dynamiqIngredients }
-            <BurgerIngredients type='bread-bottom' />
+    return (
+        <div className={classes.Burger}>
+            <BurgerIngredient type="bread-top" />
+            {transformedIngredients}
+            <BurgerIngredient type="bread-bottom" />
         </div>
-    )
-}
+    );
+};
 
-export default Burger; 
+export default burger;

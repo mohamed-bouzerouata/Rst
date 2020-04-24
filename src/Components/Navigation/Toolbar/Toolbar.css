@@ -4,7 +4,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #fcc600;
+    background-color: #703B09;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,10 +12,11 @@
     box-sizing: border-box;
     z-index: 90;
 }
+
 .Toolbar nav {
     height: 100%;
-       
 }
+
 .Logo {
     height: 80%;
 }

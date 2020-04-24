@@ -1,13 +1,5 @@
-:root {
-    --yellow: #ffc600;
-    --black: #272727;
-    --pink: #f93d66;
-    --moove: #6d47d9;
-    --linear-gradient: (110deg, #f93d66, #6d47d9);
-}
-
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
 }
